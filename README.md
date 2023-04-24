@@ -170,7 +170,7 @@ update-deployment   4 seconds ago
 We will be using `buildah` clusterTasks, which gets installed along with Operator. Operator installs few ClusterTask which you can see.
 
 ```bash
-$ tkn clustertasks ls
+$ tkn clustertasks list
 NAME                       DESCRIPTION   AGE
 buildah                                  1 day ago
 buildah-v0-14-3                          1 day ago
