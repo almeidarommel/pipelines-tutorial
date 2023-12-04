@@ -314,15 +314,15 @@ build-and-deploy   1 minute ago   ---        ---       ---        ---
 
 ## Creating Secret git with namespace
 ```
-oc create secret generic github-personal --from-literal=username=${GITHUB_USER} --from-literal=password=${GITHUB_TOKEN} --type "kubernetes.io/basic-auth" -n <namespace>
+oc create secret generic github-secret --from-literal=username=${GITHUB_USER} --from-literal=password=${GITHUB_TOKEN} --type "kubernetes.io/basic-auth" -n <namespace>
 ```
 ## Creating annotate secret git with namespace
 ```
-oc annotate secret github-personal "tekton.dev/git-0=https://github.com/${GITHUB_USER}" -n <namespace>
+oc annotate secret github-secret "tekton.dev/git-0=https://github.com/${GITHUB_USER}" -n <namespace>
 ```
 ## Creating link secret git with namespace
 ```
-oc secrets link pipeline github-personal -n <namespace>
+oc secrets link pipeline github-secret -n <namespace>
 ```
 ## Trigger Pipeline
 
