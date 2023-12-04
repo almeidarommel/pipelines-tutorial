@@ -129,7 +129,7 @@ Tasks consist of a number of steps that are executed sequentially. Tasks are exe
 Here is an example of a Maven task for building a Maven-based Java application:
 
 ```yaml
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
   name: maven-build
@@ -190,7 +190,7 @@ In this tutorial, you will create a pipeline that takes the source code of the a
 Here is the YAML file that represents the above pipeline:
 
 ```yaml
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
   name: build-and-deploy
