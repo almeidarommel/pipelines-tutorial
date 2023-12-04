@@ -312,6 +312,18 @@ NAME               AGE            LAST RUN   STARTED   DURATION   STATUS
 build-and-deploy   1 minute ago   ---        ---       ---        ---
 ```
 
+## Creating Secret git with namespace
+```
+oc create secret generic github-personal --from-literal=username=${GITHUB_USER} --from-literal=password=${GITHUB_TOKEN} --type "kubernetes.io/basic-auth" -n <namespace>
+```
+## Creating annotate secret git with namespace
+```
+oc annotate secret github-personal "tekton.dev/git-0=https://github.com/${GITHUB_USER}" -n <namespace>
+```
+## Creating link secret git with namespace
+```
+oc secrets link pipeline github-personal -n <namespace>
+```
 ## Trigger Pipeline
 
 Now that the pipeline is created, you can trigger it to execute the tasks
